@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <meta name="description" content="UA-Track: Uncertainty-Aware End-to-End 3D Multi-Object Tracking">
+  <meta name="keywords" content="UA-Track, Uncertainty-Aware, 3D Multi-Object Tracking">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UA-Track: Uncertainty-Aware End-to-End 3D Multi-Object Tracking</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/icon2.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="./static/js/model-viewer.min.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+<!--          <img src="static/images/lidar_nerf_logo.png" width="40%" alt="overview_image">-->
+          <h1 class="title is-1 publication-title">UA-Track: Uncertainty-Aware End-to-End 3D Multi-Object Tracking</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href=""><strong>Lijun Zhou</strong></a><sup>1*</sup>,
+              </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com.hk/citations?user=1ltylFwAAAAJ&hl=zh-CN&oi=sra"><strong>Tao Tang</strong></a><sup>2,1*</sup>,
+              </span>
+            <span class="author-block">
+              <a href=""><strong>Pengkun Hao</strong></a><sup>1</sup>,
+              </span>
+            <span class="author-block">
+              <a href=""><strong>Zihang He</strong></a><sup>1</sup>,
+              </span>
+            <span class="author-block">
+              <a href=""><strong>Kalok Ho</strong></a><sup>1</sup>,
+              </span>
+            <span class="author-block">
+              <a href=""><strong>Shuo Gu</strong></a><sup>1</sup>,
+              </span>
+
+
+
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href=""><strong>Zhihui Hao</strong></a><sup>1</sup>,
+              </span>
+            <span class="author-block">
+              <a href=""><strong>Haiyang Sun</strong></a><sup>1</sup>,
+              </span>
+            <span class="author-block">
+              <a href=""><strong>Lijun Zhou</strong></a><sup>1</sup>,
+              </span>
+            <span class="author-block">
+              <a href=""><strong>Kun Zhan</strong></a><sup>1</sup>,
+              </span><span class="author-block">
+              <a href=""><strong>Peng Jia</strong></a><sup>1</sup>,
+              </span><span class="author-block">
+              <a href=""><strong>Xianpeng Lang</strong></a><sup>1</sup>,
+              </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=voxznZAAAAAJ"><strong>Xiaodan Liang</strong></a><sup>2 &dagger;</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup> Li Auto Inc. &nbsp;&nbsp;</span>
+            <span class="author-block"><sup>2</sup> Shenzhen Campus, Sun Yat-sen University. &nbsp;&nbsp;</span>
+
+          </div>
+          <p>{*: Co-first author. &dagger;: Corresponding author.}</p>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2304.10406" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+<!--              <span class="link-block">-->
+<!--                <a href="https://youtu.be/YX4LX025mZQ"-->
+<!--                   class="external-link button is-normal is-rounded is-dark">-->
+<!--                  <span class="icon">-->
+<!--                      <i class="fab fa-youtube"></i>-->
+<!--                  </span>-->
+<!--                  <span>Video</span>-->
+<!--                </a>-->
+<!--              </span>-->
+
+              <span class="link-block">
+                <a href="https://github.com/tangtaogo/lidar-nerf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!--<div id="model">-->
+<!--<model-viewer src="static/images/show_points.glb" style="width: 100%; height: 320px;" alt="scene0709_00.glb" auto-rotate="" camera-controls="" ar-status="not-presenting">-->
+<!--</model-viewer>-->
+<!--</div>-->
+<!--<script type="module" src="./static/js/model-viewer.min.js"></script>-->
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+        <div class="item item-bird0" align="center">
+          <img src="static/images/teaser.jpg" width="75%" alt="overview_image">
+          <div class="content has-text-justified">
+            <p>   <b>The uncertainty issue in 3D multiple object tracking</b>. The uncertainty issue refers to the models that do not provide accurate certainty estimates. In complex driving scenarios, the uncertainty issue arises from various factors, especially the occlusions and small size of target objects, which present significant challenges to achieving accurate tracking. The previous state-of-the-art end-to-end tracker, PF-Track, lacking uncertainty modeling, fails to track objects in certain complex scenarios
+            </p>
+          </div>
+
+      </div>
+    </div>
+  </div>
+  <div align="center">
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container">
+
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-two-thirds">
+        <h2 class="title is-2">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            3D multiple object tracking (MOT) plays a crucial role in autonomous driving perception. Recent end-to-end query-based trackers simultaneously detect and track objects, which have shown promising potential for the 3D MOT task. However, existing methods overlook the uncertainty issue, which refers to the lack of precise confidence about the state and location of tracked objects. Uncertainty arises owing to various factors during motion observation by cameras, especially occlusions and the small size of target objects, resulting in an inaccurate estimation of the object's position, label, and identity. To this end, we propose an Uncertainty-Aware 3D MOT framework, <b> UA-Track</b>, which tackles the uncertainty problem from multiple aspects. Specifically, we first introduce an Uncertainty-aware Probabilistic Decoder to capture the uncertainty in object prediction with probabilistic attention. Secondly, we propose an Uncertainty-guided Query Denoising strategy to further enhance the training process. We also utilize Uncertainty-reduced Query Initialization, which leverages predicted 2D object location and depth information to reduce query uncertainty. As a result, our UA-Track achieves state-of-the-art performance on the nuScenes benchmark, i.e., 66.3% AMOTA on the test split, surpassing the previous best end-to-end solution by a significant margin of 8.9% AMOTA.
+          </p>
+<!--        </div>-->
+<!--        <div align="center" style="margin-top:80px;">-->
+<!--          <img style="height: auto; width: 100%; object-fit: contain" src="static/images/motivation3.jpg" alt="overview_image">-->
+<!--        </div>-->
+<!--        <div class="content has-text-justified">-->
+<!--        <p>-->
+<!--          A comparison of novel view LiDAR point clouds generated from LiDARsim, PCGen, and our LiDAR-NeRF. LiDARsim suffers from inaccuracies in explicit 3D mesh recon- struction. PCGen overestimates object surfaces. Specifically, laser beams emitted by the LiDAR sensor can be influenced by surface material and normal direction, resulting in some beams pene- trating car glass and reaching the seats (car1 and car2), while others are lost (car3). Although an additional style-transfer net can alleviate the problem of beam loss, it does not take into account spe- cial attributes like the transmission. As opposed to prior arts, our proposed method, LiDAR-NeRF, effectively encodes 3D information and multiple attributes, achieving high fidelity with ground truth.-->
+<!--        </p>-->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-two-thirds">
+        <h2 class="title is-2">Method</h2>
+        <div class="content has-text-justified">
+          <h2 class="title is-4">UA-Track</h2>
+          <img style="height: auto; width: 100%; object-fit: contain" src="static/images/uatrack.jpg" alt="overview_image">
+          <p>
+            <b>The UA-Track Framework.</b>
+            To model and capture the uncertainty in object prediction, we introduce an Uncertainty-aware Probabilistic Decoder (blue module).
+            Moreover, we present an Uncertainty-guided Query Denoising strategy (green module) to enhance the model robustness and convergence against uncertainty of the training process.
+            We also propose Uncertainty-reduced Query Initialization (yellow module) to improve the query initialization with reduced uncertainty
+            The proposed Uncertainty-aware Probabilistic Decoder (UPD), Uncertainty-guided Query Denoising (UQD), and Uncertainty-reduced Query Initialization (UQI) are incorporated together to tackle the uncertainty issue.
+<!--            Neg: negative, Ign: ignore, Pos: positive, Mask: separate the normal queries and the denoising part to prevent information leakage.-->
+          </p>
+          <h2 class="title is-4">UPD</h2>
+          <img style="height: auto; width: 100%; object-fit: contain" src="static/images/UPD2.jpg" alt="overview_image">
+          <p>
+            <b>Uncertainty-aware Probabilistic Decoder (UPD) architecture.</b>
+            The traditional cross-attention is upgraded with probabilistic attention to quantifying the uncertainty. The probabilistic attention utilizes a multi-layer perception that takes the query q and key k as input to generate the mean and standard deviation, which are used to form a Gaussian distribution. Subsequently, the attention value $\alpha$ is sampled from the constructed Gaussian distribution.
+          </p>
+
+          <h2 class="title is-4">UQI</h2>
+          <img style="height: auto; width: 100%; object-fit: contain" src="static/images/bev.jpg" alt="overview_image">
+          <p>
+            <b>Qualitative results of our UQI.</b>
+            The initial queries generated by our UQI module accurately locate the regions of interest for the objects, resulting in more ac- curate tracking results.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+
+<section class="section">
+  <div class="container">
+
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-two-thirds">
+        <h2 class="title is-2">Results</h2>
+        <div class="content has-text-justified">
+          <h2 class="title is-4">nuScenes val set</h2>
+          <img style="height: auto; width: 100%; object-fit: contain" src="static/images/table1.png" alt="overview_image">
+          <p>
+            Our UA-Track outperforms all existing camera-based 3D MOT methods in all metrics.
+          </p>
+          <h2 class="title is-4">nuScenes test set</h2>
+          <img style="height: auto; width: 100%; object-fit: contain" src="static/images/table2.png" alt="overview_image">
+          <p>
+            Our UA-Track surpasses the previous best solution by a significant margin of 8.9% AMOTA.
+          </p>
+          <h2 class="title is-4">Analysis</h2>
+          <img style="height: auto; width: 100%; object-fit: contain" src="static/images/table3.png" alt="overview_image">
+          <p>
+            Uncertainty quantification results and ablations on the proposed modules of UA-Track. s and σ donate entropy and standard deviation, respectively. It is clear that incorporating each uncertainty-aware module facilitates the tackling of the uncertainty issue and leads to performance gain in tracking.
+          </p>
+          <img style="height: auto; width: 100%; object-fit: contain" src="static/images/uncertainty.png" alt="overview_image">
+          <p>
+            UA-Track consistently outperforms state-of-the-art tracker PF-Track under different uncertainty situations, especially under severe occlusions and small object size settings.
+          </p>
+          <h2 class="title is-4">Qualitative Results</h2>
+          <img style="height: auto; width: 100%; object-fit: contain" src="static/images/vis3.jpg" alt="overview_image">
+          <p>
+            (a) The tracking results for an occlusion scenario of two pedestrians of consecutive frames (ti − ti+12), which are often encountered in real life. (b) The tracking results on several challenging tracking scenes with uncertainty, including the small size of vehicles and pedestrians (scene 1 and scene 2) and occlusions in spacious and crowded environments (scene 3 and scene 4). Moreover, we plot the attention scores of object queries, which indicate how strongly the model focuses on the target objects. A higher concentration of color represents a higher attention score and a stronger confidence in the corresponding object.
+          </p>
+          <img style="height: auto; width: 100%; object-fit: contain" src="static/images/vis4.jpg" alt="overview_image">
+          <p>
+            The tracking results on several challenging tracking scenarios with uncertainty, including the small size of the target objects and the occlusions. Moreover, we plot the attention scores of object queries, which indicate how strongly the model focuses on the target objects. A higher concentration of color represents a higher attention score and a stronger confidence in the corresponding object.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 align="center" class="title is-2">Videos</h2>
+
+        <!-- Main -->
+        <!-- <h3 align="center" style="margin-top:80px;"  class="title is-4">Introduction Video</h3> -->
+        <div class="content has-text-justified">
+        </div>
+        <div class="content has-text-centered">
+          <video id="replay-video" controls="" muted="" width="80%">
+            <source src="static/video/demo.mp4" type="video/mp4">
+          </video>
+        </div>
+        <!-- Main -->
+
+      </div>
+    </div>
+    <!--/ Animation. -->
+  </div>
+</section>
+
+
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>
+ @article{zhou2024uatrack,
+  title={UA-Track: Uncertainty-Aware End-to-End 3D Multi-Object Tracking},
+  author={Lijun Zhou, Tao Tang, Pengkun Hao, Zihang He, Kalok Ho, Shuo Gu, Zhihui Hao, Haiyang Sun, Lijun Zhou, Kun Zhan,Peng Jia,Xianpeng Lang, Xiaodan Liang},
+  journal={arXiv preprint arXiv:xxxx.xxxxx},
+  year={2023}
+}
+</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div align="center" class="container">
+    <div class="columns is-centered">
+      <div class="content">
+        This website is adopted from <a href="https://github.com/nerfies/nerfies.github.io">nerfies</a>.
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+</body>
+</html>
